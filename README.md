@@ -155,7 +155,7 @@ You'll need to create the following front-end files:
 
 * `queries.js`: This will hold the query `GET_ME`, which will execute the `me` query set up using Apollo Server.
 
-* `mutations.js`:
+* d`mutations.js`:
 
 	* `LOGIN_USER` will execute the `loginUser` mutation set up using Apollo Server.
 
@@ -167,7 +167,7 @@ You'll need to create the following front-end files:
 
 Additionally, you’ll need to complete the following tasks in each of these front-end files:
 
-* `App.js`: Create an Apollo Provider to make every request work with the Apollo Server.
+* d`App.js`: Create an Apollo Provider to make every request work with the Apollo Server.
 	
 * `SearchBooks.js`:
 

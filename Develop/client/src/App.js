@@ -3,9 +3,24 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+const client = new ApolloClient({
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
 function App() {
   return (
+    <ApolloProvider client={client}>
     <Router>
       <>
         <Navbar />
@@ -25,6 +40,7 @@ function App() {
         </Routes>
       </>
     </Router>
+    </ApolloProvider>
   );
 }
 
